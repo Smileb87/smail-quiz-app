@@ -1,55 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="./styles.css" />
-</head>
-<body>
+  <title>Quiz App</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <header>
-    <h1>Quiz App</h1>
+    <app-title class="app-title">Quiz App</app-title>
   </header>
   <main>
     <section class="question-card">
-      <img
-        id="bookmarkButton"
-        class="question-card__icon question-card__icon--active"
-        src="./assets/bookmark_filled.png"
-        alt="bookmark filled"
-      />
-      <h2 class="question-card__question">Why is accessibility important?</h2>
-      <button class="question-card__button">show answer</button>
-      <p class="question-card__answer"></p>
-      <div class="question-card__tags">
-        <div class="question-card__tag">#html</div>
-        <div class="question-card__tag">#accessibility</div>
-      </div>
-    </section>
+      <img class="questions-card__bookmark" src="./image/bookmark_filled.png" alt="bookmark">
+      <h2 class="question-card">What property flips the axes in flexbox?</h2>
+      <button class="show-answer-button">Show Answer</button>
+      <div class="question-card__tag-container">
+        <p class="question-card__tag-container-item">#HTML</p>
+        <p class="question-card__tag-container-item">#Flexbox</p>
+        <p class="question-card__tag-container-item">#CSS</p>
+    </div>
+  </section class=question-card>
+    <div class="question-card">
+      <img class="questions-card__bookmark" src="./image/bookmark_filled.png" alt="bookmark">
+      <h2 class="question-card">Lorem Ipsum dolor sit?</h2>
+      <button class="show-answer-button">Show Answer</button>
+      <div class="question-card__tag-container">
+        <p class="question-card__tag-container-item">#HTML</p>
+        <p class="question-card__tag-container-item">#Flexbox</p>
+        <p class="question-card__tag-container-item">#CSS</p>
+    </div>
+    </section class=question-card>
   </main>
-  <footer class="footer">
-    <a href="index.html" class="footer__link">
-      <img class="footer__icon" src="./assets/home.png" alt="home" />
-    </a>
-    <a href="bookmark.html" class="footer__link footer__link--active">
-      <img
-        class="footer__icon"
-        src="./assets/bookmark_filled.png"
-        alt="bookmark filled"
-      />
-    </a>
-    <a href="profile.html" class="footer__link">
-      <img class="footer__icon" src="./assets/profile.png" alt="profile" />
-    </a>
+
+  <footer class="fixed-footer">
+    <nav>
+      <a href="index.html"><img class="image" src="./image/home.png" alt="home"></a>
+      <a href="bookmark.html"><img class="image" src="./image/bookmark_filled.png" alt="bookmark"></a>
+      <a href="form.html"><img class="img" src="Image/add.png" alt="form"></a>
+      <a href="profile-page.html"><img class="img" src="./image/profile.png" alt="profile"></a>
+    </nav>
   </footer>
-
-  <script>
-    const bookmarkButton = document.getElementById('bookmarkButton');
-
-    bookmarkButton.addEventListener('click', function() {
-      bookmarkButton.classList.toggle('bookmarked');
-    });
-  </script>
 </body>
+<script>
+  // Bookmark toggle
+  const bookmarkButton = document.getElementById('bookmark-button-1');
+  bookmarkButton.addEventListener('click', toggleBookmark);
+
+  function toggleBookmark() {
+    bookmarkButton.classList.toggle('bookmarked');
+  }
+
+  // Answer toggle
+  const answerButton = document.getElementById('answer-button-1');
+  const answer = document.querySelector('.question-card__answer');
+
+  answerButton.addEventListener('click', toggleAnswer);
+
+  function toggleAnswer() {
+    answerButton.classList.toggle('hidden');
+    if (answer.classList.contains('hidden')) {
+      answerButton.textContent = 'show answer';
+    } else {
+      answerButton.textContent = 'hide answer';
+    }
+  }
+</script>
+</html>
 </html>
