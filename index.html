@@ -12,22 +12,26 @@
     <section class="question-card">
       <img class="questions-card__bookmark" src="./image/bookmark.png" alt="bookmark">
       <h2 class="question-card">What property flips the axes in flexbox?</h2>
-      <button class="show-answer-button">Show Answer</button>
+      <button id="answer-button-1" class="question-card__button">show answer</button>
+      <div id="answer-1" class="question-card__answer">Alora</div>
       <div class="question-card__tag-container">
         <p class="question-card__tag-container-item">#HTML</p>
         <p class="question-card__tag-container-item">#Flexbox</p>
         <p class="question-card__tag-container-item">#CSS</p>
-    </div>
-  </section class=question-card>
-    <div class="question-card">
+      </div>
+    </section class=question-card>
+    <section class="question-card">
       <img class="questions-card__bookmark" src="./image/bookmark.png" alt="bookmark">
       <h2 class="question-card">Lorem Ipsum dolor sit?</h2>
-      <button class="show-answer-button">Show Answer</button>
+      <button class="question-card__button">show answer</button>
+        <p class="question-card__answer">Bonjour</p>
       <div class="question-card__tag-container">
         <p class="question-card__tag-container-item">#HTML</p>
         <p class="question-card__tag-container-item">#Flexbox</p>
         <p class="question-card__tag-container-item">#CSS</p>
     </div>
+    </section class=question-card>
+  </main>
     </section class=question-card>
   </main>
   
@@ -47,17 +51,13 @@
     bookmarkButton.addEventListener('click', function() {
       bookmarkButton.classList.toggle('question-card__icon--active');
     });
-
-// Toggle answer button and answer text
-const answerButton = document.getElementById('answer-button-1');
+    
+    // Toggle answer button and answer text
+    const answerButton = document.getElementById('answer-button-1');
     const answerText = document.getElementById('answer-1');
     answerButton.addEventListener('click', function() {
-      answerText.classList.toggle('hidden');
-      if (answerText.classList.contains('hidden')) {
-        answerButton.textContent = 'show answer';
-      } else {
-        answerButton.textContent = 'hide answer';
-      }
+    answerText.classList.toggle('hidden');
+    answerButton.classList.toggle('question-card__button--active');
     });
   </script>
 </body>
