@@ -1,63 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Quiz App</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+<title>Quiz App</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Quiz App</h1>
-  </header>
-      </head>
-      <body>
-          <div class="profile">
-              <img src="image/profile.jpg" class="profile-picture" alt="Profile Picture">
-              <div class="alternate-text">Alore</div>
-          </div>
-          
-          <div class="about-me">
-              <div class="section-title">About Me</div>
-              <div class="section-content">
-                  Few lines about myself...
-              </div>
-          </div>
-          
-          <div class="counters">
-              <div class="section-content">
-                  <div class="counter-widget">
-                      <div>Created Questions</div>
-                      <div>100</div>
-                  </div>
-                  <div class="counter-widget">
-                      <div>Bookmarks</div>
-                      <div>50</div>
-                  </div>
-              </div>
-          </div>
-          
-          <div class="settings">
-              <div class="section-title">Settings</div>
-              <div class="section-content">
-                  <!-- Add your settings content here -->
-              </div>
-          </div>
-          
-          <div class="dark-mode">
-              <div class="section-title">Dark Mode</div>
-              <div class="section-content">
-                  <label class="switch">
-                      <input type="checkbox">
-                      <span class="slider"></span>
-                  </label>
-              </div>
-          </div>
-    
+<header>
+    <app-title class="app-title">Quiz App</app-title>
+</header>
+<main class="profile-page">
+    <div class="profile">
+        <img src="image/profile.jpg" class="profile-picture" alt="Profile Picture">
+        <div class="alternate-text">Alora</div>
+    </div>
+    <div class="about-me">
+        <div class="section-title">About Me</div>
+        <div class="section-content">
+            Few lines about myself...
+        </div>
+    </div>
+    <div class="counters">
+        <div class="section-content">
+            <div class="counter-widget">
+                <div>Created Questions</div>
+                <div>100</div>
+            </div>
+            <div class="counter-widget">
+                <div>Bookmarks</div>
+                <div>50</div>
+            </div>
+        </div>
+    </div>
+    <div class="settings">
+        <div class="section-title">Settings</div>
+        <div class="section-content">
+            <!-- Add your settings content here -->
+        </div>
+    </div>
+    <div class="settings__dark-mode-wrapper">
+        <label for="dark-mode" class="settings__dark-mode-label">Dark Mode</label>
+        <div class="switch-container">
+            <input id="dark-mode" type="checkbox" />
+            <div class="switch"></div>
+        </div>
+    </div>
+
     <footer class="fixed-footer">
-      <nav>
-        <a href="index.html"><img class="img" src="./image/home.png" alt="home"></a>
-        <a href="bookmarks.html"><img class="img" src="./image/bookmark_transparent.png" alt="bookmark"></a>
-        <a href="profile-page.html"><img class="img" src="./image/profile_filled.png" alt="profile"></a>
-      </nav>
+        <nav>
+            <a href="index.html"><img class="img" src="./image/home.png" alt="home"></a>
+            <a href="bookmark.html"><img class="img" src="./image/bookmark_transparent.png" alt="bookmark"></a>
+            <a href="form.html"><img class="img" src="Image/add.png" alt="form"></a>
+            <a href="profile-page.html"><img class="img" src="./image/profile_filled.png" alt="profile"></a>
+        </nav>
     </footer>
-  </body>
-  </html>
+</main>
+<script>
+    // JavaScript code to handle the dark mode toggle functionality
+    const darkModeToggle = document.getElementById('dark-mode');
+    darkModeToggle.addEventListener('change', function() {
+        document.body.classList.toggle('dark-mode');
+        document.querySelector('.profile-page').classList.toggle('dark-version');
+    });
+</script>
+</body>
+</html>

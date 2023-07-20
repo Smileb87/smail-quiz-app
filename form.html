@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App - Add Question</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/index.js" defer></script>
+    <script src="./form.js" defer></script>
+  </head>
+  <body>
+    <header>
+        <app-title class="app-title">Quiz App</app-title>    </header>
+    <main>
+      <section class="form-section">
+        <h2>Add a Question</h2>
+        <form id="question-form" data-js="question-form">
+          <div class="form-group">
+            <label for="question">Your question:</label>
+            <textarea id="question" data-js="question-for-form" name="question" rows="4" cols="50" maxlength="150"></textarea>
+            <span id="question-counter" class="character-counter" data-js="form-question-counter"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="answer">Your answer:</label>
+            <textarea id="answer" name="answer" data-js="form-answer" rows="4" cols="50" maxlength="150"></textarea>
+            <span id="answer-counter" class="character-counter" data-js="form-answer-counter"></span>
+          </div>          
+
+          <div class="form-group">
+            <label for="tag">Tag:</label>
+            <input type="text" id="tag" name="tag" data-js="form-tag"/>
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+      <div id="question-cards-container"></div>
+    </main>
+    <footer class="footer">
+        <footer class="fixed-footer">
+            <nav>
+              <a href="index.html"><img class="img" src="./image/home.png" alt="home"></a>
+              <a href="bookmark.html"><img class="img" src="./image/bookmark_transparent.png" alt="bookmark"></a>
+              <a href="form.html"><img class="img" src="Image/add_filled.png" alt="form"></a>
+              <a href="profile-page.html"><img class="img" src="./image/profile.png" alt="profile"></a>
+            </nav>
+          </footer>   
+  </body>
+</html>
