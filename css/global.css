@@ -32,17 +32,33 @@ main {
   text-align: center;
 }
 
+@keyframes button-scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.question-card__button:hover {
+  animation: button-scale 0.5s infinite;
+}
+
 footer {
   text-align: center;
+  margin: 0%;
   position: fixed;
-  width: 100vw;
+  width: 80vw;
   z-index: 1;
   background-color: #ef1010;
   height: 9%;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 30px;
   display: grid;
 }
 
@@ -56,15 +72,45 @@ nav {
 
 .fixed-footer nav {
 display: flex;
+position: fixed;
 justify-content: space-evenly;
 }
 
 .fixed-footer img {
 display: flex;
-width: 13vw;
-height: 13vw;
+width: 12vw;
+height: 12vw;
 }
 
-.hidden {
-  display: none;
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
+
+.fixed-footer nav a {
+  animation: bounce 1s infinite;
+}
+
+.profile-picture {
+  animation-name: rotate;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

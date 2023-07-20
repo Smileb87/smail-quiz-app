@@ -1,6 +1,6 @@
-@import "./css/global.css";
-@import "./css/components.css";
-@import "./css/pages-home.css";
-@import "./css/pages-profile.css";
-@import "./css/bookmark.css";
-
+@import "/css/global.css";
+@import "/css/component.css";
+@import "/css/pages-home.css";
+@import "/css/pages-profile.css";
+@import "/css/bookmark.css";
+@import "/css/form.css";

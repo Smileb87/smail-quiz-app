@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>Quiz App</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <script src="index.js" defer></script>
 </head>
 <body>
   <header>
@@ -10,10 +11,10 @@
   </header>
   <main>
     <section class="question-card">
-      <img class="questions-card__bookmark" src="./image/bookmark.png" alt="bookmark">
+      <img class="questions-card__bookmark" data-js="card-bookmark" src="./image/bookmark.png" alt="bookmark">
       <h2 class="question-card">What property flips the axes in flexbox?</h2>
-      <button id="answer-button-1" class="question-card__button">show answer</button>
-      <div id="answer-1" class="question-card__answer">Alora</div>
+      <button id="answer-button" class="question-card__button" data-js="answer-button">show answer</button>
+      <div id="answer" class="question-card__answer" data-js="card-answer">Alora</div>
       <div class="question-card__tag-container">
         <p class="question-card__tag-container-item">#HTML</p>
         <p class="question-card__tag-container-item">#Flexbox</p>
@@ -23,8 +24,7 @@
     <section class="question-card">
       <img class="questions-card__bookmark" src="./image/bookmark.png" alt="bookmark">
       <h2 class="question-card">Lorem Ipsum dolor sit?</h2>
-      <button class="question-card__button">show answer</button>
-        <p class="question-card__answer">Bonjour</p>
+      <button class="question-card__button" data-js="answer-button" >show answer</button>
       <div class="question-card__tag-container">
         <p class="question-card__tag-container-item">#HTML</p>
         <p class="question-card__tag-container-item">#Flexbox</p>
@@ -43,23 +43,6 @@
       <a href="profile-page.html"><img class="img" src="./image/profile.png" alt="profile"></a>
     </nav>
   </footer>
-  <script>
-    // JavaScript code to handle the toggle functionality
-
-    // Toggle bookmark button
-    const bookmarkButton = document.getElementById('bookmark-button-1');
-    bookmarkButton.addEventListener('click', function() {
-      bookmarkButton.classList.toggle('question-card__icon--active');
-    });
-    
-    // Toggle answer button and answer text
-    const answerButton = document.getElementById('answer-button-1');
-    const answerText = document.getElementById('answer-1');
-    answerButton.addEventListener('click', function() {
-    answerText.classList.toggle('hidden');
-    answerButton.classList.toggle('question-card__button--active');
-    });
-  </script>
 </body>
 </html>
 

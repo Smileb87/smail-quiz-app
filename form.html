@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App - Add Question</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/index.js" defer></script>
+    <script src="./form.js" defer></script>
   </head>
   <body>
     <header>
@@ -13,27 +15,28 @@
     <main>
       <section class="form-section">
         <h2>Add a Question</h2>
-        <form id="question-form">
+        <form id="question-form" data-js="question-form">
           <div class="form-group">
             <label for="question">Your question:</label>
-            <textarea id="question" name="question" rows="4" cols="50" maxlength="150"></textarea>
-            <span id="question-counter" class="character-counter"></span>
+            <textarea id="question" data-js="question-for-form" name="question" rows="4" cols="50" maxlength="150"></textarea>
+            <span id="question-counter" class="character-counter" data-js="form-question-counter"></span>
           </div>
           
           <div class="form-group">
             <label for="answer">Your answer:</label>
-            <textarea id="answer" name="answer" rows="4" cols="50" maxlength="150"></textarea>
-            <span id="answer-counter" class="character-counter"></span>
+            <textarea id="answer" name="answer" data-js="form-answer" rows="4" cols="50" maxlength="150"></textarea>
+            <span id="answer-counter" class="character-counter" data-js="form-answer-counter"></span>
           </div>          
 
           <div class="form-group">
             <label for="tag">Tag:</label>
-            <input type="text" id="tag" name="tag" />
+            <input type="text" id="tag" name="tag" data-js="form-tag"/>
           </div>
 
           <button type="submit">Submit</button>
         </form>
       </section>
+      <div id="question-cards-container"></div>
     </main>
     <footer class="footer">
         <footer class="fixed-footer">
@@ -43,49 +46,6 @@
               <a href="form.html"><img class="img" src="Image/add_filled.png" alt="form"></a>
               <a href="profile-page.html"><img class="img" src="./image/profile.png" alt="profile"></a>
             </nav>
-          </footer>
-
-    <script>
-      // JavaScript code to handle the form submission, character count, and toggle functionality
-    
-      // Toggle bookmark button
-      const bookmarkButton = document.getElementById('bookmark-button-1');
-      bookmarkButton.addEventListener('click', function () {
-        bookmarkButton.classList.toggle('question-card__icon--active');
-      });
-    
-      // Toggle answer button and answer text
-      const answerButton = document.getElementById('answer-button-1');
-      const answerText = document.getElementById('answer-1');
-      answerButton.addEventListener('click', function () {
-        answerText.classList.toggle('question-card__answer--visible');
-        if (answerText.classList.contains('question-card__answer--visible')) {
-          answerButton.textContent = 'hide answer';
-        } else {
-          answerButton.textContent = 'show answer';
-        }
-      });
-    
-      function updateCharacterCount(event) {
-        // Character count logic
-      }
-    
-      const form = document.getElementById('question-form');
-    
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-    
-        // Handle form data and card creation
-    
-        // Reset form inputs
-        form.reset();
-      });
-    
-      const textareas = document.querySelectorAll('textarea[maxlength]');
-    
-      textareas.forEach((textarea) => {
-        // Character count logic
-      });
-    </script>    
+          </footer>   
   </body>
 </html>
